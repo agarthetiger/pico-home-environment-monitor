@@ -13,12 +13,14 @@ The parts required to make this project are as follows:
 * Raspberry Pico (Pico W for the Wifi-enabled version)
 * 0.96" OLED display. This should be one using the ssd1306 driver chip.
 * 6x6x11 push button switch
-* M2 screws
-* M3 screws
-* M3 hex bolts
-* M3 heatset inserts
-* BME280 sensors
-* Micro-USB cable and power supply
+* M2 x 6mm screws (x4 for fixing the Raspberry Pico)
+* M3 x 16mm screws (x2 to secure the button)
+* M3 x 8mm screws (x2 to secure the display)
+* M3 x 20mm bolts (x2 to secure the clamshell halves together) 
+* M3 x Xmm bolts (x4 to secure the clamshell to the base)
+* M3 heatset inserts (x6 for the M3 bolts)
+* BME280 sensor
+* Micro-USB cable and USB power supply
 
 # 3D printing files
 
