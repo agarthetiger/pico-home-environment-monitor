@@ -247,6 +247,19 @@ class Enhanced_Display:
         self.show()
 
 
+    def display_humidity(self, humidity):
+        self.fill(0)
+        self.select_font(None) # Select the built in 8 pixel font
+        self.text('Humidity', 0, 0, 1, 0)
+
+        self.select_font('digits-60') # Select my custom large font
+        degrees = '\u00b0' # Character code for the degrees symbol
+        #display.text(f'{temp}{degrees}', 0, 5, 1, 1)
+        self.text(f'{humidity}', 0, 5, 1, 1)
+        #display.select_font('icons-32')
+        #display.text('t', 0, 0, 2, 1) # The 't' character contains the temperature icon
+        self.show()
+
 
     
 

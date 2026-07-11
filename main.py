@@ -34,7 +34,8 @@ ONBOARD_TEMP = machine.ADC(4)
 ONBOARD_TEMP_CONVERSION_FACTOR = 3.3 / (65535)
 
 # Initialize variables
-# state = "OFF"
+options = ['temp', 'humidity']
+state = 0
 # random_value = 0
 
 
@@ -99,6 +100,12 @@ async def check_button():
     
     while True:
         # Check button
+        if (button.click()):
+            if (state == 0):
+                state = 1
+            else:
+                state = 0
+            update_oled()
         await asyncio.sleep(0.1)  # Button check interval, seconds
 
 
@@ -107,9 +114,13 @@ async def update_oled():
     global bme
     
     while True:
-        integer, separator, decimal = bme.temperature.partition('.')
-        temp_1dp = f'{integer}{separator}{decimal[0]}'
-        display.display_temp(temp_1dp)
+        if (state == 1):
+            integer, separator, decimal = bme.humidity.partition('.')
+            display.display_humidity(integer)            
+        else:
+            integer, separator, decimal = bme.temperature.partition('.')
+            temp_1dp = f'{integer}{separator}{decimal[0]}'
+            display.display_temp(temp_1dp)
         await asyncio.sleep(1)
 
 
@@ -143,3 +154,5 @@ except Exception as e:
     print('Error occurred: ', e)
 except KeyboardInterrupt:
     print('Program Interrupted by the user')
+finally:
+    display.show_msg('Bye')
