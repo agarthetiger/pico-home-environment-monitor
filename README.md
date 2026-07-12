@@ -24,8 +24,18 @@ The parts required to make this project are as follows:
 
 # 3D printing files
 
-The fusion 360 files as well as step files will be available on thingiverse once the final version has been comfirmed.
+The Fusion 360 files as well as step files will be available on thingiverse once the final (first) release version has been confirmed.
 
 # Flashing the Pico
 
 You will need to add your WiFi SSID and password to the `wifi.py` file prior to copying this onto your Pico W in order to scrape the metrics. If these are not set the WiFi setup will be skipped and the unit will act as a local device.
+
+# To Do
+
+* Button press cycles through IP and MAC address
+* Button press does not repeat when holding the button down
+* Update README with complete hardware
+* Add secrets.txt file as an example of how to add WiFi credentials and update README
+* Upload stl and fusion files to Printables and link to them from here
+* Add links and thanks to all the sources of code and tutorials used during this project
+* Update metrics html with raw sensor values as well as new lines and check with Prometheus the scrape is still working afterwards
